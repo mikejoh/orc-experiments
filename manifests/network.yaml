@@ -1,0 +1,19 @@
+apiVersion: openstack.k-orc.cloud/v1alpha1
+kind: Network
+metadata:
+  labels:
+    app.kubernetes.io/name: openstacknetwork
+    app.kubernetes.io/instance: openstacknetwork-gettingstarted
+    app.kubernetes.io/part-of: gettingstarted
+  name: network-1
+  namespace: orc-experiments
+spec:
+  cloudCredentialsRef:
+    cloudName: openstack
+    secretName: openstack-clouds
+  managementPolicy: managed
+  resource:
+    description: |
+      Example network
+    tags:
+      - gettingstarted
